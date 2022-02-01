@@ -348,8 +348,8 @@ module.exports = function(RED) {
 
           ws.on('close', function(code, reason) {
             debug_csserver(`ws closed for ${eventname}, code ${code}, reason: ${reason}`);
-            // ee.removeAllListeners(connname);
-            // ee.removeAllListeners(eventname);
+            ee.removeAllListeners(connname);
+            ee.removeAllListeners(eventname);
           });
 
           ws.on('error', function(err) {
